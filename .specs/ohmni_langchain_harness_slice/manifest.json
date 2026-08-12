@@ -1,0 +1,26 @@
+{
+  "title": "Ohmni LangChain-Compatible Harness Implementation Slice",
+  "generated": "2026-08-10",
+  "files": [
+    "00_SLICE_MASTER.md",
+    "01_ARCHITECTURE_REFACTOR.md",
+    "02_HARNESS_CHAT_MODEL.md",
+    "03_LANGCHAIN_MODEL_BACKEND.md",
+    "04_HARNESS_MODEL_BACKEND.md",
+    "05_GEMINI_API_PROVIDER.md",
+    "06_COMPOSITION_AND_CONFIGURATION.md",
+    "07_TESTS.md",
+    "08_ACCEPTANCE_AND_MIGRATION.md",
+    "99_REFERENCES.md"
+  ],
+  "order": [
+    "01_ARCHITECTURE_REFACTOR.md",
+    "02_HARNESS_CHAT_MODEL.md",
+    "03_LANGCHAIN_MODEL_BACKEND.md",
+    "04_HARNESS_MODEL_BACKEND.md",
+    "05_GEMINI_API_PROVIDER.md",
+    "06_COMPOSITION_AND_CONFIGURATION.md",
+    "07_TESTS.md",
+    "08_ACCEPTANCE_AND_MIGRATION.md"
+  ]
+}

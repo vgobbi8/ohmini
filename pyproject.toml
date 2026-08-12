@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ohmni"
+version = "0.1.0"
+description = "Ohmni TCC prototype"
+requires-python = ">=3.11"
+dependencies = [
+  "langchain-core>=1.5.0",
+  "langchain-google-genai>=4.3.0",
+  "langchain-openai>=1.4.0",
+  "langchain-anthropic>=1.5.0",
+]
+
+[project.scripts]
+ohmni = "ohmni.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
