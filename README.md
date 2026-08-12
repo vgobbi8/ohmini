@@ -7,7 +7,7 @@ The codebase is intentionally small. Model execution, circuit generation, valida
 ## What it does
 
 - generates a SPICE netlist from a plain-English circuit requirement
-- supports a local harness backend for coding-agent CLIs such as `agy`, Codex, Claude Code, and OpenCode
+- supports a local harness backend for coding-agent CLIs such as Antigravity, Codex, Claude Code, and OpenCode
 - supports API backends through LangChain chat models
 - writes reproducible run artifacts to disk
 - validates generated circuits with ngspice
@@ -16,7 +16,7 @@ The codebase is intentionally small. Model execution, circuit generation, valida
 
 - Python 3.11 or newer
 - `ngspice` for real validation runs
-- `agy` if you want to use the harness backend
+- a supported harness CLI such as Antigravity, Codex, Claude Code, or OpenCode if you want to use the harness backend
 - API credentials if you want to use a hosted model backend
 
 ## Install
