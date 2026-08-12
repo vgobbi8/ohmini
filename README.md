@@ -7,7 +7,7 @@ The codebase is intentionally small. Model execution, circuit generation, valida
 ## What it does
 
 - generates a SPICE netlist from a plain-English circuit requirement
-- supports a local harness backend through `agy`
+- supports a local harness backend for coding-agent CLIs such as `agy`, Codex, Claude Code, and OpenCode
 - supports API backends through LangChain chat models
 - writes reproducible run artifacts to disk
 - validates generated circuits with ngspice
