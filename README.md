@@ -66,12 +66,12 @@ OHMNI_ENABLE_DOTENV=0
 
 ### Harness backend
 
-Use this when you want Ohmni to drive a local coding-agent CLI such as `agy`:
+Use this when you want Ohmni to drive a local coding-agent CLI such as Antigravity, Codex, Claude Code, or OpenCode:
 
 ```bash
 OHMNI_MODEL_BACKEND=harness
-OHMNI_MODEL_PROVIDER=agy
-OHMNI_MODEL="Gemini 3.6 Flash (Low)"
+OHMNI_MODEL_PROVIDER=<supported harness CLI>
+OHMNI_MODEL="<model name supported by that CLI>"
 ```
 
 ### API backend
