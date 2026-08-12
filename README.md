@@ -1,11 +1,13 @@
 # Ohmni
 
-Ohmni is a small circuit-generation prototype for the TCC. It takes a natural-language requirement, asks a model to produce a SPICE netlist, and then validates that netlist with ngspice. The project is intentionally small and keeps model execution, generation, validation, and pipeline orchestration separated.
+Ohmni is a compact circuit-generation prototype built for a capstone project. It takes a natural-language requirement, asks a model to produce a SPICE netlist, and then validates that netlist with ngspice.
+
+The codebase is intentionally small. Model execution, circuit generation, validation, and pipeline orchestration are kept separate so the project can grow without turning into a single hard-to-change block.
 
 ## What it does
 
 - generates a SPICE netlist from a plain-English circuit requirement
-- supports a harness-style CLI backend through `agy`
+- supports a local harness backend through `agy`
 - supports API backends through LangChain chat models
 - writes reproducible run artifacts to disk
 - validates generated circuits with ngspice
@@ -27,7 +29,7 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-If you are developing locally, this project also supports running straight from `src/`:
+If you are developing locally, you can also run straight from `src/`:
 
 ```bash
 PYTHONPATH=src .venv/bin/python -m ohmni.cli --help
@@ -50,7 +52,7 @@ The most important settings are:
 - `OHMNI_NGSPICE_EXECUTABLE`
 - `OHMNI_OUTPUT_DIR`
 
-For the first smoke test, the recommended settings are:
+For the first smoke test, use these settings:
 
 ```bash
 OHMNI_MODEL_BACKEND=fake
@@ -91,7 +93,7 @@ Run Ohmni with a natural-language requirement:
 ohmni run "Create an RC low-pass filter with a 1 kHz cutoff"
 ```
 
-If you prefer not to install the console script yet, you can run the module directly:
+If you do not want to install the console script yet, you can run the module directly:
 
 ```bash
 PYTHONPATH=src .venv/bin/python -m ohmni.cli run "Create an RC low-pass filter with a 1 kHz cutoff"
@@ -117,7 +119,7 @@ export OHMNI_ENABLE_DOTENV=0
 ohmni run "Create an RC low-pass filter"
 ```
 
-If `ngspice` is not installed, you can point `OHMNI_NGSPICE_EXECUTABLE` at a small local stub for the smoke test.
+If `ngspice` is not installed, point `OHMNI_NGSPICE_EXECUTABLE` at a small local stub for the smoke test.
 
 ## Testing
 
