@@ -55,6 +55,22 @@ class NgSpiceValidator:
                 stderr_path=str(stderr_path),
                 artifact_names=(netlist_path.name, stdout_path.name, stderr_path.name, command_log_path.name),
             )
+        except OSError as exc:
+            duration = time.perf_counter() - start
+            issue = ValidationIssue(
+                code="NGSPICE_EXECUTION_ERROR",
+                message=f"ngspice could not be executed: {context.ngspice_executable}",
+                details={"error": str(exc)},
+            )
+            return ValidationResult(
+                validator_name=self.name,
+                status="error",
+                issues=(issue,),
+                duration_seconds=duration,
+                stdout_path=str(stdout_path),
+                stderr_path=str(stderr_path),
+                artifact_names=(netlist_path.name, stdout_path.name, stderr_path.name, command_log_path.name),
+            )
         except subprocess.TimeoutExpired as exc:
             duration = time.perf_counter() - start
             stdout_text = exc.stdout or ""

@@ -5,9 +5,8 @@ import io
 import json
 import os
 from pathlib import Path
-import stat
+import subprocess
 import tempfile
-import textwrap
 import unittest
 from unittest import mock
 
@@ -16,23 +15,6 @@ from ohmni.generation.direct_spice import DirectSpiceGenerator
 from ohmni.model.contracts import FakeModelBackend, ModelResponse
 from ohmni.pipeline.circuit_pipeline import CircuitPipeline
 from ohmni.validation.ngspice import NgSpiceValidator
-
-
-def _fake_ngspice_script(directory: Path, exit_code: int = 0) -> Path:
-    script = directory / "fake-ngspice"
-    script.write_text(
-        textwrap.dedent(
-            f"""\
-            #!/usr/bin/env python3
-            import sys
-            print("sim ok")
-            sys.exit({exit_code})
-            """
-        ),
-        encoding="utf-8",
-    )
-    script.chmod(script.stat().st_mode | stat.S_IEXEC)
-    return script
 
 
 class PipelineAndCliTests(unittest.TestCase):
@@ -46,7 +28,7 @@ class PipelineAndCliTests(unittest.TestCase):
                 )
             )
             generator = DirectSpiceGenerator(backend=backend)
-            script = _fake_ngspice_script(tmp_path)
+            script = "ngspice"
             pipeline = CircuitPipeline(
                 generator=generator,
                 validators=[NgSpiceValidator()],
@@ -64,7 +46,11 @@ class PipelineAndCliTests(unittest.TestCase):
                 ngspice_executable=str(script),
                 model_identity={"backend": "fake", "provider": "fake", "model": "fake-model"},
             )
-            result = pipeline.run("RC low-pass filter")
+            with mock.patch(
+                "ohmni.validation.ngspice.subprocess.run",
+                return_value=subprocess.CompletedProcess(args=[script], returncode=0, stdout="sim ok\n", stderr=""),
+            ):
+                result = pipeline.run("RC low-pass filter")
             self.assertEqual(result.status, "passed")
             self.assertTrue(result.report_path.exists())
             report = json.loads(result.report_path.read_text(encoding="utf-8"))
@@ -77,7 +63,7 @@ class PipelineAndCliTests(unittest.TestCase):
     def test_cli_successful_fake_run(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
-            script = _fake_ngspice_script(tmp_path)
+            script = "ngspice"
             env = {
                 "OHMNI_MODEL_BACKEND": "fake",
                 "OHMNI_MODEL_PROVIDER": "fake",
@@ -89,7 +75,10 @@ class PipelineAndCliTests(unittest.TestCase):
                 "OHMNI_OUTPUT_DIR": str(tmp_path / "runs"),
                 "OHMNI_ENABLE_DOTENV": "0",
             }
-            with mock.patch.dict(os.environ, env, clear=True):
+            with mock.patch.dict(os.environ, env, clear=True), mock.patch(
+                "ohmni.validation.ngspice.subprocess.run",
+                return_value=subprocess.CompletedProcess(args=[script], returncode=0, stdout="sim ok\n", stderr=""),
+            ):
                 out = io.StringIO()
                 err = io.StringIO()
                 with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):

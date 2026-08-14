@@ -1,0 +1,204 @@
+{
+  "main": {
+    "id": "72d82eb22dc802a8",
+    "type": "split",
+    "children": [
+      {
+        "id": "5d16c8bb8941cf3d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "08e8c02e45d4812f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "22_REPAIR_LOOP_FUTURE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "22_REPAIR_LOOP_FUTURE"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1c0f257c9e1a1d1d",
+    "type": "split",
+    "children": [
+      {
+        "id": "d4503c6473191481",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f028745289e7e8ef",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0767547a3bba0afb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "73318649a5969753",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "71aa04d084851876",
+    "type": "split",
+    "children": [
+      {
+        "id": "bc613e032de6155a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e5750c445ee24503",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "22_REPAIR_LOOP_FUTURE.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 22_REPAIR_LOOP_FUTURE"
+            }
+          },
+          {
+            "id": "a8a8fb192c4f3df2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "22_REPAIR_LOOP_FUTURE.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 22_REPAIR_LOOP_FUTURE"
+            }
+          },
+          {
+            "id": "8278e60eb30a2ac4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "7c36870d855ae6d3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "3633ac10352b5e25",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "22_REPAIR_LOOP_FUTURE.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 22_REPAIR_LOOP_FUTURE"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "08e8c02e45d4812f",
+  "lastOpenFiles": [
+    "19_KICAD_DRC_AND_PCB_FUTURE.md",
+    "16_KICAD_CLI_TOOLCHAIN.md",
+    "14_KICAD_LIBRARY_DISCOVERY.md",
+    "15_KICAD_SYMBOL_PROVIDER.md",
+    "13_EDA_BOUNDARY.md",
+    "12_INITIAL_ELECTRONICS_FIXTURES.md",
+    "11_INGESTION_AND_MARKDOWN.md",
+    "09_KNOWLEDGE_QUERY_AND_BUNDLE.md",
+    "08_TYPED_PAYLOADS.md",
+    "07_PROVENANCE_AUTHORITY_EPISTEMICS.md",
+    "06_KNOWLEDGE_REPRESENTATION.md",
+    "05_REQUIREMENTS.md",
+    "04_GLOSSARY_AND_TERMINOLOGY.md",
+    "03_TARGET_ARCHITECTURE.md",
+    "00_MASTER_PLAN.md"
+  ]
+}
