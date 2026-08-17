@@ -183,8 +183,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "08e8c02e45d4812f",
+  "active": "f028745289e7e8ef",
   "lastOpenFiles": [
+    "IMPLEMENTATION_TRACKER.md",
     "19_KICAD_DRC_AND_PCB_FUTURE.md",
     "16_KICAD_CLI_TOOLCHAIN.md",
     "14_KICAD_LIBRARY_DISCOVERY.md",
